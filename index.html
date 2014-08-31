@@ -1,0 +1,28 @@
+<html ng-app="myApp"> <!-- ng-app directive to initialize angular app -->
+	<head>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,300,700" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div class="container" ng-controller="EmpController"> <!-- ng-controller directive to define controller and its scope -->
+            <div class="row">
+                <div class="col-sm-9">
+                    <blockquote>
+                        <h1>Employee Listing application using Angular JS</h1>
+                    </blockquote>
+                </div>
+                <div class="col-sm-3" style="margin-top:50px;">
+                    <button ng-click="addNewClicked=!addNewClicked;" class="btn btn-sm btn-danger"><i class="glyphicon  glyphicon-plus"></i>&nbsp;Add New Employee</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div ng-include src="'partials/emp_listing.html'"></div> <!-- ng-include directive to include an external file -->
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="js/angular.min.js"></script>
+        <script type="text/javascript" src="app/app.js"></script>
+    </body>
+
+</html>

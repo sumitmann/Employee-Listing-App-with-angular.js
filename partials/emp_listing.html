@@ -1,0 +1,50 @@
+<div class="container" ng-controller="EmpController">
+    <form ng-init="addNewClicked=false; " ng-if="addNewClicked" id="newEmpForm">
+        <div class="row">
+            <div class="col-md-4">
+                <input type="text" class="form-control" placeholder="Enter Name" ng-model="ename" required="required">
+            </div>
+            <div class="col-md-4">
+                <input type="number" class="form-control" placeholder="Enter Age" ng-model="eage" required="required">
+            </div>
+            <div class="col-md-4">
+                <input type="text" class="form-control" placeholder="Enter Photo Url" ng-model="epic" required="required">
+            </div>
+        </div>
+        <div class="row" style="margin-top:10px">
+            <div class="col-md-4">
+                <input type="text" class="form-control" placeholder="Enter Profile" ng-model="epf" required="required">
+            </div>
+            <div class="col-md-4">
+                <input type="text" class="form-control" placeholder="Enter Role" ng-model="erole" required="required">
+            </div>
+            <div class="col-md-4">
+                <button class="btn btn-default btn-success" type="submit" ng-click="addEmp(ename, eage, epic, epf, erole)"><i class="glyphicon glyphicon-plus"></i>&nbsp;Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="row">
+    <table class="table table-hover">
+        <thead>
+            <th>ID</th>
+            <th>Avatar</th>
+            <th>Name (Age)</th>
+            <th>Profile</th>
+            <th>Role</th>
+            <th>&nbsp;</th>
+        </thead>
+        <tbody ng-repeat="emp in EmpList"> <!-- ng-repeat directive to list all the repeating details -->
+            <td>{{emp.Id}}</td>
+            <td>
+                <img src="{{emp.EmpAvatar}}" class="img-circle" style="max-width:70px;">
+            </td>
+            <td>{{emp.EmpName}} ({{emp.EmpAge}})</td>
+            <td>{{emp.EmpProfile}}</td>
+            <td>{{emp.EmpRole}}</td>
+            <td><a ng-click="delEmp(emp.Id)" class="pull-right"><i class="glyphicon glyphicon-trash"></i></a>
+            </td>
+        </tbody>
+    </table>
+</div>
+</div>
